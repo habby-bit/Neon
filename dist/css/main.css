@@ -186,15 +186,12 @@ body {
   animation-fill-mode: forwards;
 }
 
-.title-down {
-  transform: translateY(150px);
-}
-
 .text-down {
   transform: translateY(150px);
   animation-name: movingDown;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  visibility: visible;
 }
 
 @keyframes movingUp {
@@ -219,7 +216,10 @@ body {
   0% {
     opacity: 1;
   }
+  20% {
+    opacity: 0;
+  }
   100% {
-    opacity: 0.5;
+    opacity: 0;
   }
 }
