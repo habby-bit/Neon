@@ -1,5 +1,9 @@
-$primary-color: #120314;
+// $primary-color: #120314;
+$primary-color: #000000;
 $secondary-color: #ff9966;
+$purple-color: #cc66ff;
+$blue-color: #66ccff;
+$yellow-color: #ffe666;
 $font-family: Verdana, Tahoma;
 
 @mixin buttonStyle {
@@ -45,7 +49,7 @@ $font-family: Verdana, Tahoma;
 }
 
 @mixin animationTransitions {
-    // animation-iteration-count: infinite;
-    // animation-duration: 3s;
-    // animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: steps(1, end);
 }

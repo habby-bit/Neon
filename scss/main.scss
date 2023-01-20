@@ -3,37 +3,74 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-html,
-body {
-    height: 100%;
-    background: $primary-color;
-    font-family: $font-family;
     box-sizing: border-box;
 }
 
-// Home/Welcome Page
-.flex-container {
+html {
+    height: 100%;
+}
+
+body {
+    // background: $primary-color;
+    padding: 0;
+    font-family: $font-family;
+    // background-image: linear-gradient(
+    //     to bottom right,
+    //     #ffffff40,
+    //     $primary-color
+    // );
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    height: 100%;
+    background-color: black;
+}
+
+.homeBody {
+    // background-image: radial-gradient(
+    //     circle,
+    //     #ffffff40,
+    //     #cac9c940,
+    //     #6c6c6c40,
+    //     $primary-color,
+    //     $primary-color,
+    //     $primary-color
+    // );
+    background-image: linear-gradient(
+        to bottom right,
+        #ffffff40,
+        $primary-color
+    );
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.welcomeBody {
+    background-image: none;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// ENTER BUTTON
+.enter-container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-decoration: none;
 
     // Giant Button
-    .neon-button {
+    .enter-button {
         @include animationTransitions;
         animation-name: button-flicker;
         @include buttonStyle;
-
-        &:hover {
-            @include hoverButtonStyle;
-        }
     }
 }
 
-// Button Shadows
+// ENTER BUTTON SHADOW
 .lightShadow {
     @include animationTransitions;
     animation-name: shadow-flicker;
@@ -46,7 +83,7 @@ body {
     @include heavyShadowStyle;
 }
 
-// Animations
+// WEOLCOME BUTTON FLICKER ANIMATION
 @keyframes button-flicker {
     50% {
         @include hoverButtonStyle;
@@ -63,144 +100,326 @@ body {
     }
 }
 
-// CARD PAGE
-
-// Home Button
-.home-button {
-    text-decoration: none;
-    @include hoverButtonStyle;
-    display: inline-block;
-    margin: 1.8rem;
-    padding: 0.7rem 1.3rem;
+// NAV
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // border-bottom: solid 1px whitesmoke;
+    // border-top: solid 1px whitesmoke;
+    margin-top: 1rem;
+    // background-color: #ffffff2b;
 }
 
-// Card
-.card-container {
-    width: 100%;
+.navButton {
+    text-decoration: none;
+    width: 15rem;
+    text-align: center;
+    margin: 1.5rem 0rem;
+    padding: 0.5rem 0.8rem;
+    color: whitesmoke;
+    // background-color: white;
+    cursor: pointer;
+    // font-weight: 900;
+    // border-radius: 5px;
+    // box-shadow: inset 0 0 0.1rem $secondary-color, 0 0 0.1rem $secondary-color,
+    //     inset 0 0 0.7rem $secondary-color, 0 0 0.7rem $secondary-color;
+    // box-shadow: inset 0 0 0.1rem #fff, 0 0 0.1rem #fff, inset 0 0 0.7rem #fff,
+    //     0 0 0.7rem #fff;
+}
+
+.navButtonSelected {
+    // background: #ff9966;
+    color: #ff9966;
+    // box-shadow: inset 0 0 0.1rem $secondary-color, 0 0 0.1rem $secondary-color,
+    //     inset 0 0 0.7rem $secondary-color, 0 0 0.7rem $secondary-color;
+    font-style: italic;
+    cursor: default;
+    text-shadow: 0 0 0.7rem $secondary-color;
+}
+
+// HOME PAGE
+
+.homePage {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 5rem;
-    color: #fff;
+}
 
-    .card {
-        background: url("../img/Lights.jpg") center/cover;
-        width: 19rem;
-        height: 24rem;
-        border-radius: 5%;
-        border: 1px solid greenyellow;
-        z-index: 1;
-        position: relative;
+.homeTitle {
+    color: whitesmoke;
+    font-style: italic;
+    text-shadow: 0 0 0.1rem black;
+    box-shadow: inset 0 0 0.1rem #cc66ff, 0 0 0.1rem #cc66ff,
+        inset 0 0 0.7rem #cc66ff, 0 0 0.7rem #cc66ff;
+    padding: 1.5rem 3.5rem;
+    margin: 1.5rem 0rem 3rem 0rem;
+    width: 70vw;
+    text-align: center;
+    background-color: #cc66ff4d;
+}
 
-        .image-overlay {
-            background: rgba(204, 204, 204, 0.1);
-            width: 19rem;
-            height: 24rem;
-            border-radius: 5%;
-            z-index: 1;
-            position: absolute;
+.homeInfoContainer {
+    color: whitesmoke;
+    padding: 4rem 0rem 1rem 0rem;
+    // width: 70vw;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    // box-shadow: inset 0 0 0.1rem #fff, 0 0 0.1rem #fff, inset 0 0 0.7rem #fff,
+    // 0 0 0.7rem #fff;
+}
+
+.homeInfo {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .homeInfoTwo {
+        margin-top: 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+// MAIN HALL
+
+// HALL HEADER
+
+.hallHeader {
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+// BORDER AND BACKGROUND
+.mainBorder {
+    // border: solid 0.2rem rgb(37, 37, 37);
+    // border: solid 0.1rem whitesmoke;
+    padding: 1.3rem;
+    margin: 0rem 1rem;
+}
+
+.mainBackground {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(23, 23, 23);
+    padding-bottom: 5rem;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom right, #2c2c2c40, #65656540);
+}
+
+// PICTURE AND TEXT CONTAINER
+
+.cardContainer {
+    width: 17.5rem;
+    padding: 1.5rem;
+    margin-top: 2.3rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    cursor: default;
+
+    .imageAndTextGroup {
+        display: flex;
+        flex-direction: column;
+        transition: 1s ease-in-out;
+        width: 17.5rem;
+
+        .imageContainer {
+            border-radius: 4px;
+            box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem #fff, 0 0 1.2rem #fff,
+                0 0 1.5rem #fff;
+            height: 18rem;
+
+            .imageCard {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
         }
     }
 }
 
-// Inner Text
-
-.move-container {
-    height: 100%;
-    position: relative;
-}
-
-.title {
-    padding: 1.2rem;
-    z-index: 3;
-    font-weight: 900;
-    filter: drop-shadow(1.9rem 1.2rem 0.14rem black);
-    position: absolute;
-    bottom: 0;
-    transition: transform 1s ease-out;
-}
-
-.text-container {
-    box-sizing: border-box;
-    height: 100%;
+// TEXT STYLE
+.name,
+.showOrMovie,
+.blurb {
+    padding: 0.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.2rem;
-    z-index: 3;
-    filter: drop-shadow(0 0 0.8rem black);
-    visibility: hidden;
-    transition: transform 1s ease-out;
-    position: absolute;
-    bottom: -135px;
+    border-radius: 4px;
+    color: whitesmoke;
+}
 
-    .underline {
-        height: 0.2rem;
-        width: 90%;
-        background-color: greenyellow;
-        margin: 0.4rem 0rem 1rem -1.2rem;
+.name,
+.showOrMovie {
+    text-align: center;
+}
+
+.name {
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    box-shadow: 0px 0px 10px 3px $purple-color;
+    border: 4px solid $purple-color;
+}
+
+.showOrMovie {
+    font-style: italic;
+    margin-top: 0.5rem;
+    box-shadow: 0px 0px 10px 3px #fff;
+    border: 4px solid #fff;
+}
+
+.blurb {
+    opacity: 0;
+    box-shadow: 0px 0px 10px 3px #fff;
+    border: 4px solid #fff;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+}
+
+.honorableMentionName {
+    box-shadow: 0px 0px 10px 3px $blue-color;
+    border: 4px solid $blue-color;
+}
+
+.honorableMentionShowOrMovie {
+    box-shadow: 0px 0px 10px 3px #fff;
+    border: 4px solid #fff;
+}
+
+.honorableMentionText {
+    box-shadow: 0px 0px 10px 3px #fff;
+    border: 4px solid #fff;
+}
+
+// CARD GLOW AND MOVE ANIMATIONS
+.imageAndTextGroup:hover {
+    transform: translateY(-0.1rem);
+
+    .imageContainer {
+        animation-name: honorableCardGlow;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 
-    p.text {
-        margin-bottom: 1rem;
+    .honorableImageContainer {
+        animation-name: honorableCardGlow;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    // TEXT MOVE ANIMATIONS
+    .blurb {
+        animation-name: blurbAppear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 }
 
-.title-up {
-    transform: translateY(-150px);
+.imageAndTextGroup:not(:hover) {
+    .imageContainer {
+        animation-name: honorableCardNotGlow;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .honorableImageContainer {
+        animation-name: honorableCardNotGlow;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    // TEXT MOVE ANIMATIONS
+    .blurb {
+        animation-name: blurbDisappear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
 }
 
-.text-up {
-    transform: translateY(-150px);
-    visibility: visible;
-    animation-name: movingUp;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+@keyframes cardGlow {
+    0% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 1rem #fff, 0 0 1.2rem #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem $purple-color,
+            0 0 1.2rem $purple-color, 0 0 1.5rem $purple-color,
+            0 0 1.8rem $purple-color;
+    }
 }
 
-// .title-down {
-//     transform: translateY(150px);
-// }
-
-.text-down {
-    transform: translateY(150px);
-    animation-name: movingDown;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    visibility: visible;
+@keyframes cardNotGlow {
+    0% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem $purple-color,
+            0 0 1.2rem $purple-color, 0 0 1.5rem $purple-color,
+            0 0 1.8rem $purple-color;
+    }
+    100% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem #fff, 0 0 1.2rem #fff;
+    }
 }
 
-@keyframes movingUp {
+@keyframes honorableCardGlow {
+    0% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 1rem #fff, 0 0 1.2rem #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem #fff, 0 0 1.2rem #fff,
+            0 0 1.5rem #fff, 0 0 1.8rem #fff;
+    }
+}
+
+@keyframes honorableCardNotGlow {
+    0% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem #fff, 0 0 1.2rem #fff,
+            0 0 1.5rem #fff, 0 0 1.8rem #fff;
+    }
+    100% {
+        box-shadow: 0 0 0.1rem #fff, 0 0 0.8rem #fff, 0 0 1.2rem #fff;
+    }
+}
+
+@keyframes blurbAppear {
     0% {
         opacity: 0;
-    }
-
-    50% {
-        opacity: 0.1;
-    }
-
-    75% {
-        opacity: 0.3;
-    }
-
-    85% {
-        opacity: 0.6;
+        margin-top: 0rem;
     }
 
     100% {
         opacity: 1;
+        margin-top: 2.8rem;
     }
 }
 
-@keyframes movingDown {
+@keyframes blurbDisappear {
     0% {
         opacity: 1;
+        margin-top: 2.8rem;
     }
 
-    20% {
+    10% {
         opacity: 0;
     }
 
     100% {
-        opacity: 0;
+        margin-top: 0rem;
     }
+}
+
+.divider {
+    height: 20rem;
+    width: 0.2rem;
+    background-color: whitesmoke;
+    margin: 2rem;
+    border: 2px solid #ffe666;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 3px $yellow-color;
 }
