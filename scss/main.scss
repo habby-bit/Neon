@@ -11,7 +11,6 @@ html {
 }
 
 body {
-    // background: $primary-color;
     padding: 0;
     font-family: $font-family;
     // background-image: linear-gradient(
@@ -26,15 +25,6 @@ body {
 }
 
 .homeBody {
-    // background-image: radial-gradient(
-    //     circle,
-    //     #ffffff40,
-    //     #cac9c940,
-    //     #6c6c6c40,
-    //     $primary-color,
-    //     $primary-color,
-    //     $primary-color
-    // );
     background-image: linear-gradient(
         to bottom right,
         #ffffff40,
@@ -106,10 +96,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    // border-bottom: solid 1px whitesmoke;
-    // border-top: solid 1px whitesmoke;
     margin-top: 1rem;
-    // background-color: #ffffff2b;
 }
 
 .navButton {
@@ -119,18 +106,12 @@ body {
     margin: 1.5rem 0rem;
     padding: 0.5rem 0.8rem;
     color: whitesmoke;
-    // background-color: white;
     cursor: pointer;
-    // font-weight: 900;
-    // border-radius: 5px;
     // box-shadow: inset 0 0 0.1rem $secondary-color, 0 0 0.1rem $secondary-color,
     //     inset 0 0 0.7rem $secondary-color, 0 0 0.7rem $secondary-color;
-    // box-shadow: inset 0 0 0.1rem #fff, 0 0 0.1rem #fff, inset 0 0 0.7rem #fff,
-    //     0 0 0.7rem #fff;
 }
 
 .navButtonSelected {
-    // background: #ff9966;
     color: #ff9966;
     // box-shadow: inset 0 0 0.1rem $secondary-color, 0 0 0.1rem $secondary-color,
     //     inset 0 0 0.7rem $secondary-color, 0 0 0.7rem $secondary-color;
@@ -164,7 +145,6 @@ body {
 .homeInfoContainer {
     color: whitesmoke;
     padding: 4rem 0rem 1rem 0rem;
-    // width: 70vw;
     margin-bottom: 2rem;
     opacity: 0.8;
     // box-shadow: inset 0 0 0.1rem #fff, 0 0 0.1rem #fff, inset 0 0 0.7rem #fff,
@@ -197,8 +177,6 @@ body {
 
 // BORDER AND BACKGROUND
 .mainBorder {
-    // border: solid 0.2rem rgb(37, 37, 37);
-    // border: solid 0.1rem whitesmoke;
     padding: 1.3rem;
     margin: 0rem 1rem;
 }
